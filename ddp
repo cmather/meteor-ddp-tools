@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+var argv = require('optimist').default({
+      host: 'localhost',
+      port: 3000,
+      path: 'websocket',
+      auto_reconnect: false,
+      use_ssl: false,
+      auto_reconnect_timer: 500
+    }).argv
+  , args = argv._
+  , command
+  , commandArgs = args.slice(1)
+  , execFile = require('child_process').execFile
+  , child;
+
+function usage () {
+  console.error('Command line tools for DDP.\n');
+  console.error('Usage: ddp [--host] [--port] [--path] [--auto_reconnect] [--use_ssl] [--auto_reconnect_timer] <command> [<args>]\n');
+  console.error('Available commands are:');
+  console.error('\tsubscribe\t\tSubscribe to a collection with parameters');
+  console.error('\tsubscribe-multi\t\tSubscribe to multiple collections');
+  console.error('\tcall\t\t\tCall a method');
+  process.exit(1);
+}
+
+if (!(command = args[0])) return usage();
+
+process.env.DDP_HOST = argv.host;
+process.env.DDP_PORT = argv.port;
+process.env.DDP_PATH = argv.path;
+process.env.DDP_USE_SSL = argv.use_ssl;
+process.env.DDP_AUTO_RECONNECT = argv.auto_reconnect;
+process.env.DDP_AUTO_RECONNECT_TIMER = argv.auto_reconnect_timer;
+
+child = execFile('ddp-' + command, commandArgs);
+
+child.stdout.on('data', function (data) {
+  process.stdout.write(data);
+});
+
+child.stderr.on('data', function (data) {
+  process.stderr.write(data);
+});
+
+child.on('exit', function (code) {
+  process.exit(code);
+});
+
+process.on('SIGINT', function () {});
