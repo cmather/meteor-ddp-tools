@@ -7,7 +7,7 @@ function link {
 
 link "ddp"
 link "ddp-call"
-link "ddb-subscribe"
+link "ddp-subscribe"
 link "ddp-subscribe-multi"
 
 echo "Install complete. Type this at the command prompt:"
