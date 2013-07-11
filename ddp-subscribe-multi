@@ -13,7 +13,7 @@ if (!subscriptions.length) return usage();
 
 Client(function () {
   for (var i = 0; i < subscriptions.length; i++) {
-    console.log('[subscribe] ' + subscriptions[i]);
+    console.log('[subscribe]: ' + subscriptions[i]);
     this.subscribe(subscriptions[i], []);
   }
 });

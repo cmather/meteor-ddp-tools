@@ -76,7 +76,6 @@ Client.prototype.parseArgs = function (args) {
   args = args.map(function (arg) {
     return JSON.parse(arg);
   });
-  console.log(args);
   return args;
 };
 
