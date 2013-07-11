@@ -71,4 +71,13 @@ Client.prototype.setup = function (onConnect) {
   });
 };
 
+Client.prototype.parseArgs = function (args) {
+  var client = this
+  args = args.map(function (arg) {
+    return JSON.parse(arg);
+  });
+  console.log(args);
+  return args;
+};
+
 module.exports = Client;

@@ -15,5 +15,5 @@ if (!(subscription = args[0])) return usage();
 
 Client(function () {
   console.log('[subscribe] ' + subscription);
-  this.subscribe(subscription, subscriptionArgs);
+  this.subscribe(subscription, this.parseArgs(subscriptionArgs));
 });
