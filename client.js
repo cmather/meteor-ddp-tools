@@ -74,7 +74,11 @@ Client.prototype.setup = function (onConnect) {
 Client.prototype.parseArgs = function (args) {
   var client = this
   args = args.map(function (arg) {
-    return JSON.parse(arg);
+    try {
+      return JSON.parse(arg);
+    } catch (e) {
+      return arg;
+    }
   });
   return args;
 };
