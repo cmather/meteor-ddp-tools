@@ -1,0 +1,33 @@
+{
+  "name": "ddp-tools",
+  "version": "0.0.1",
+  "description": "Command line tools for testing and playing with Meteor DDP.",
+  "dependencies": {
+    "ddp": "~0.3.3",
+    "optimist": "~0.6.0",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/EventedMind/meteor-ddp-tools.git"
+  },
+  "keywords": [
+    "meteor",
+    "ddp",
+    "cli",
+    "command"
+  ],
+  "author": "Chris Mather <chris@eventedmind.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EventedMind/meteor-ddp-tools/issues"
+  },
+  "homepage": "https://github.com/EventedMind/meteor-ddp-tools",
+  "bin": {
+    "ddp" : "ddp.js"
+  }
+}

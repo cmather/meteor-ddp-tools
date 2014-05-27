@@ -1,9 +1,26 @@
-Command line tools for DDP.
+Command line tools for testing and playing with DDP.
 
 ## Install
-`> ./install`
 
-This symlinks the ddp and associated commands into /usr/local/bin.
+```bash
+> sudo npm install -g ddp-tools
+```
 
-## Usage
-After installing type `ddp` for commands and usage.
+### Usage
+
+```bash
+> ddp connect
+```
+
+```bash
+> ddp call <method_name> [<param1> <param2> ...]
+```
+
+```bash
+> ddp subscribe <subscription_name> [<param1> <param2> ...]
+```
+
+
+```bash
+> ddp subscribe-multi <subscription> [<subscription2> <subscription3> ...]
+```
