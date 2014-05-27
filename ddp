@@ -18,6 +18,7 @@ function usage () {
   console.error('Command line tools for DDP.\n');
   console.error('Usage: ddp [--host] [--port] [--path] [--auto_reconnect] [--use_ssl] [--auto_reconnect_timer] <command> [<args>]\n');
   console.error('Available commands are:');
+  console.error('\tconnect\t\t\tConnect to a DDP server');
   console.error('\tsubscribe\t\tSubscribe to a collection with parameters');
   console.error('\tsubscribe-multi\t\tSubscribe to multiple collections');
   console.error('\tcall\t\t\tCall a method');

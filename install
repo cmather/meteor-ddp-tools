@@ -9,6 +9,7 @@ link "ddp"
 link "ddp-call"
 link "ddp-subscribe"
 link "ddp-subscribe-multi"
+link "ddp-connect"
 
 echo "Install complete. Type this at the command prompt:"
 echo "> ddp"
